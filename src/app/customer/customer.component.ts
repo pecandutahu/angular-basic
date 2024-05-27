@@ -22,7 +22,7 @@ export class CustomerComponent implements OnInit{
     private customerService:CustomerService
   ){
     if (this.customerService.customerValue) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
     }
   }
 
@@ -43,23 +43,24 @@ export class CustomerComponent implements OnInit{
     this.error = '';
 
     if(this.form.valid) {
-      return;
+      this.loading = true;
+      this.customerService
+      .createCustomer(this.form.value)
+      .pipe(first())
+      .subscribe({
+        next: () => {
+          this.router.navigate(['/customer/'], {
+            queryParams: { registered: true },
+          });
+        },
+        error: (error) => {
+          this.error = error;
+          this.loading = false;
+        },
+      })
+    }else{
+      this.error = 'Please fill all the fields';
     }
-    this.loading = true;
-    this.customerService
-    .createCustomer(this.form.value)
-    .pipe(first())
-    .subscribe({
-      next: () => {
-        this.router.navigate([''], {
-          queryParams: { registered: true },
-        });
-      },
-      error: (error) => {
-        this.error = error;
-        this.loading = false;
-      },
-    })
   }
 
   get f() {

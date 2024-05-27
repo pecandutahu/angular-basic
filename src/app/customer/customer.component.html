@@ -12,14 +12,15 @@
                 <label for="" class="form-label">Customer Name </label>
                 <input 
                 type="text"
-                formControlName="CustomerName"
+                formControlName="customerName"
                 class="form-control"
                 [ngClass] = " { 'is-invalid' : submitted && f.customerName.errors }"
                 >
-            </div>
-            <div *ngIf="submitted && f.customerName.errors" class="invalid-feedback">
-                <div *ngIf = "f.customerName.errors.required">
-                    Kolom Username tidak boleh kosong
+                
+                <div *ngIf="submitted && f.customerName.errors" class="invalid-feedback">
+                    <div *ngIf = "f.customerName.errors.required">
+                        Kolom Customer Name tidak boleh kosong
+                    </div>
                 </div>
             </div>
             
@@ -27,14 +28,15 @@
                 <label for="" class="form-label">Customer Address </label>
                 <input 
                 type="text"
-                formControlName="CustomerAddress"
+                formControlName="customerAddress"
                 class="form-control"
                 [ngClass] = " { 'is-invalid' : submitted && f.customerAddress.errors }"
                 >
-            </div>
-            <div *ngIf="submitted && f.customerAddress.errors" class="invalid-feedback">
-                <div *ngIf = "f.customerAddress.errors.required">
-                    Kolom Username tidak boleh kosong
+                    
+                <div *ngIf="submitted && f.customerAddress.errors" class="invalid-feedback">
+                    <div *ngIf = "f.customerAddress.errors.required">
+                        Kolom Customer Address tidak boleh kosong
+                    </div>
                 </div>
             </div>
             
@@ -42,14 +44,15 @@
                 <label for="" class="form-label">Customer Phone </label>
                 <input 
                 type="text"
-                formControlName="CustomerPhone"
+                formControlName="customerPhone"
                 class="form-control"
                 [ngClass] = " { 'is-invalid' : submitted && f.customerPhone.errors }"
                 >
-            </div>
-            <div *ngIf="submitted && f.customerPhone.errors" class="invalid-feedback">
-                <div *ngIf = "f.customerPhone.errors.required">
-                    Kolom Username tidak boleh kosong
+                
+                <div *ngIf="submitted && f.customerPhone.errors" class="invalid-feedback">
+                    <div *ngIf = "f.customerPhone.errors.required">
+                        Kolom Customer Phone tidak boleh kosong
+                    </div>
                 </div>
             </div>
 
