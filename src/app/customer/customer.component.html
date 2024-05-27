@@ -1,0 +1,66 @@
+<div class="container col-md-6 offset-md-3 mt-5">
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+    <div class="card">
+        <h4 class="card-header">
+            Create Customer
+        </h4>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit) = "onSubmit()">
+            <div class="mb3">
+                <label for="" class="form-label">Customer Name </label>
+                <input 
+                type="text"
+                formControlName="CustomerName"
+                class="form-control"
+                [ngClass] = " { 'is-invalid' : submitted && f.customerName.errors }"
+                >
+            </div>
+            <div *ngIf="submitted && f.customerName.errors" class="invalid-feedback">
+                <div *ngIf = "f.customerName.errors.required">
+                    Kolom Username tidak boleh kosong
+                </div>
+            </div>
+            
+            <div class="mb3">
+                <label for="" class="form-label">Customer Address </label>
+                <input 
+                type="text"
+                formControlName="CustomerAddress"
+                class="form-control"
+                [ngClass] = " { 'is-invalid' : submitted && f.customerAddress.errors }"
+                >
+            </div>
+            <div *ngIf="submitted && f.customerAddress.errors" class="invalid-feedback">
+                <div *ngIf = "f.customerAddress.errors.required">
+                    Kolom Username tidak boleh kosong
+                </div>
+            </div>
+            
+            <div class="mb3">
+                <label for="" class="form-label">Customer Phone </label>
+                <input 
+                type="text"
+                formControlName="CustomerPhone"
+                class="form-control"
+                [ngClass] = " { 'is-invalid' : submitted && f.customerPhone.errors }"
+                >
+            </div>
+            <div *ngIf="submitted && f.customerPhone.errors" class="invalid-feedback">
+                <div *ngIf = "f.customerPhone.errors.required">
+                    Kolom Username tidak boleh kosong
+                </div>
+            </div>
+
+            <button [disabled]="loading" class="btn btn-primary">
+                <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm me-1">
+                </span>
+                Save
+            </button>
+
+        </form>
+    </div>
+</div>
