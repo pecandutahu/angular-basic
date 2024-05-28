@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CustomerService } from '../core/services/customer.service';
+import { CustomerService } from '../../core/services/customer.service';
 import { first } from 'rxjs';
 
 @Component({
   selector: 'app-customer',
-  templateUrl: './customer.component.html',
-  styleUrl: './customer.component.css'
+  templateUrl: './customer-form.component.html',
+  styleUrl: './customer-form.component.css'
 })
-export class CustomerComponent implements OnInit{
+export class CustomerFormComponent implements OnInit{
   form!:FormGroup;
   loading = false;
   submitted = false;
@@ -22,7 +22,7 @@ export class CustomerComponent implements OnInit{
     private customerService:CustomerService
   ){
     if (this.customerService.customerValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/customer']);
     }
   }
 
@@ -30,7 +30,7 @@ export class CustomerComponent implements OnInit{
       this.form = this.formBuilder.group({
         customerName: ['', Validators.required],
         customerAddress: ['', Validators.required],
-        customerCode: ['', Validators.required],
+        customerCode: [''],
         customerPhone: ['', Validators.required],
         isActive: [''],
         lastOrderDate: [''],
@@ -43,14 +43,15 @@ export class CustomerComponent implements OnInit{
     this.error = '';
 
     if(this.form.valid) {
+      console.log("is valid!!")
       this.loading = true;
       this.customerService
       .createCustomer(this.form.value)
       .pipe(first())
       .subscribe({
         next: () => {
-          this.router.navigate(['/customer/'], {
-            queryParams: { registered: true },
+          this.router.navigate(['/customer'], {
+            // queryParams: { registered: true },
           });
         },
         error: (error) => {

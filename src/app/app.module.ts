@@ -3,14 +3,16 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerComponent } from './customer/customer.component';
+import { CustomerFormComponent } from './customer/customer-form/customer-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CustomerListsComponent } from './customer/customer-lists/customer-lists.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponent
+    CustomerFormComponent,
+    CustomerListsComponent,
   ],
   imports: [
     BrowserModule,

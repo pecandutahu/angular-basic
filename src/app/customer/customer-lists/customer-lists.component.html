@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="lg-12">
+            <h3 class="text-center">List Customers</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 ms-auto">
+            <div class="input-group">
+                <input [(ngModel)]="searchText" (input)="onSearch()" type="text" name="" id="" class="form-control" placeholder="Search name">
+                <!-- <span class="input-group-btn">
+                    <a (click) = "onSearch()" class="btn btn-info">Search</a>
+                </span> -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <a routerLink="/customer/create" class="btn btn-primary">Tambah Customer</a>
+        </div>
+        <div class="lg-12">
+            <table class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Customer Name</th>
+                        <th>Customer Address</th>
+                        <th>Customer Phone</th>
+                        <th>Photo</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of filteredCustomers; let i = index;">
+                        <td> {{ i+1 }} </td>
+                        <td> {{ item.customerName }} </td>
+                        <td> {{ item.customerAddress }} </td>
+                        <td> {{ item.customerPhone }} </td>
+                        <td>
+                            <span *ngIf="item.pic">
+                                <img src="data:img/jpg;base64, {{ item.pic }}" alt="" class="img img-responsive">
+                            </span>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" (click) = "deleteCustomer(item.customerId)">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+</div>

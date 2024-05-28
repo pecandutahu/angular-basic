@@ -30,6 +30,14 @@ export class CustomerService {
     )
    }
 
+   getCustomers() {
+    return this.http.get<Customer[]>(`${environment.apiUrl}/customer/lists`);
+   }
+
+   deleteCustomer(customerId:number | undefined) : Observable<any> {
+    return this.http.delete(`${environment.apiUrl}/customer/delete/${customerId}`);
+   }
+
 
 
 } 
