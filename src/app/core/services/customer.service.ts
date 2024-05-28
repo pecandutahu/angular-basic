@@ -34,8 +34,19 @@ export class CustomerService {
     return this.http.get<Customer[]>(`${environment.apiUrl}/customer/lists`);
    }
 
+   getCustomer(id: number): Observable<Customer> {
+    return this.http.get<Customer>(`${environment.apiUrl}/customer/list/${id}`);
+  }
+
    deleteCustomer(customerId:number | undefined) : Observable<any> {
     return this.http.delete(`${environment.apiUrl}/customer/delete/${customerId}`);
+   }
+
+   updateCustomer(customer:Customer) :Observable<any> {
+    return this.http.put(
+      `${environment.apiUrl}/customer/update/${customer.customerId}`, 
+      customer
+    );
    }
 
 

@@ -42,6 +42,7 @@
                             </span>
                         </td>
                         <td>
+                            <a class="btn btn-success" routerLink="/customer/{{item.customerId}}/edit">Edit</a>
                             <a class="btn btn-danger" (click) = "deleteCustomer(item.customerId)">Delete</a>
                         </td>
                     </tr>

@@ -7,12 +7,14 @@ import { CustomerFormComponent } from './customer/customer-form/customer-form.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CustomerListsComponent } from './customer/customer-lists/customer-lists.component';
+import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerFormComponent,
     CustomerListsComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,
