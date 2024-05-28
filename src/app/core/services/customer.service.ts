@@ -23,16 +23,16 @@ export class CustomerService {
     return this.customerSubject.value;
   }
 
-   createCustomer(customer:Customer) {
+  createCustomer(customer:Customer) {
     return this.http.post(
       `${environment.apiUrl}/customer/create`, 
       customer
     )
-   }
+  }
 
-   getCustomers() {
+  getCustomers() {
     return this.http.get<Customer[]>(`${environment.apiUrl}/customer/lists`);
-   }
+  }
 
    getCustomer(id: number): Observable<Customer> {
     return this.http.get<Customer>(`${environment.apiUrl}/customer/list/${id}`);

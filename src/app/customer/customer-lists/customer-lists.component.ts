@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Customer } from '@app/core/model/customer';
 import { CustomerService } from '@app/core/services/customer.service';
-import { error } from 'console';
 
 @Component({
   selector: 'app-customer-lists',
@@ -39,7 +38,6 @@ export class CustomerListsComponent {
       });
     }
   }
-
   
   onSearch(): void {
     this.filteredCustomers = this.customers.filter(customer =>

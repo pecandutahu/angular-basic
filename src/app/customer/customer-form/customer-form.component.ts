@@ -43,7 +43,6 @@ export class CustomerFormComponent implements OnInit{
     this.error = '';
 
     if(this.form.valid) {
-      console.log("is valid!!")
       this.loading = true;
       this.customerService
       .createCustomer(this.form.value)

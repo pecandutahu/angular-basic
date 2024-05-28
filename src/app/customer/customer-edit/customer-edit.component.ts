@@ -24,7 +24,6 @@ export class CustomerEditComponent implements OnInit{
     private route: ActivatedRoute,
     private router: Router,
     private customerService:CustomerService) { }
-    
   
   ngOnInit(): void {
     this.customerId = this.route.snapshot.params['id'];

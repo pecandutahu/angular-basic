@@ -1,0 +1,32 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-header">Edit Item</h5>
+                    
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                          <label for="itemsName" class="form-label">Item Name</label>
+                          <input type="text" class="form-control" id="itemsName" [(ngModel)]="item.itemsName" name="itemsName">
+                        </div>
+                        <div class="mb-3">
+                          <label for="itemsCode" class="form-label">Item Code</label>
+                          <input type="text" class="form-control" id="itemsCode" [(ngModel)]="item.itemsCode" name="itemsCode">
+                        </div>
+                        <div class="mb-3">
+                          <label for="stock" class="form-label">Stock</label>
+                          <input type="text" class="form-control" id="stock" [(ngModel)]="item.stock" name="stock">
+                        </div>
+                        <div class="mb-3">
+                          <label for="price" class="form-label">Price</label>
+                          <input type="text" class="form-control" id="price" [(ngModel)]="item.price" name="price">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

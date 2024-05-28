@@ -8,13 +8,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CustomerListsComponent } from './customer/customer-lists/customer-lists.component';
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerFormComponent,
     CustomerListsComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    ItemCreateComponent,
+    ItemListComponent,
+    ItemEditComponent
   ],
   imports: [
     BrowserModule,

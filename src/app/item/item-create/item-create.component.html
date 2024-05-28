@@ -1,0 +1,85 @@
+<div class="container col-md-6 offset-md-3 mt-5">
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+    <div class="card">
+        <h4 class="card-header">
+            Create Item
+        </h4>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit) = "onSubmit()">
+            <div class="mb3">
+                <label for="" class="form-label">Item Name </label>
+                <input 
+                type="text"
+                formControlName="itemsName"
+                class="form-control"
+                [ngClass] = " { 'is-invalid' : submitted && f.itemsName.errors }"
+                >
+                
+                <div *ngIf="submitted && f.itemsName.errors" class="invalid-feedback">
+                    <div *ngIf = "f.itemsName.errors.required">
+                        Kolom Item Name tidak boleh kosong!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb3">
+                <label for="" class="form-label">Item Code </label>
+                <input 
+                type="text"
+                formControlName="itemsCode"
+                class="form-control"
+                [ngClass] = " { 'is-invalid' : submitted && f.itemsCode.errors }"
+                >
+                    
+                <div *ngIf="submitted && f.itemsCode.errors" class="invalid-feedback">
+                    <div *ngIf = "f.itemsCode.errors.required">
+                        Kolom Item Code tidak boleh kosong!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb3">
+                <label for="" class="form-label">Item Stok </label>
+                <input 
+                type="text"
+                formControlName="stock"
+                class="form-control"
+                [ngClass] = " { 'is-invalid' : submitted && f.stock.errors }"
+                >
+                
+                <div *ngIf="submitted && f.stock.errors" class="invalid-feedback">
+                    <div *ngIf = "f.stock.errors.required">
+                        Kolom Customer Phone tidak boleh kosong!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb3">
+                <label for="" class="form-label">Item Price </label>
+                <input 
+                type="text"
+                formControlName="price"
+                class="form-control"
+                [ngClass] = " { 'is-invalid' : submitted && f.price.errors }"
+                >
+                
+                <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                    <div *ngIf = "f.price.errors.required">
+                        Kolom Price tidak boleh kosong!
+                    </div>
+                </div>
+            </div>
+
+            <button [disabled]="loading" class="btn btn-primary mt-2">
+                <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm me-1">
+                </span>
+                Save
+            </button>
+
+        </form>
+    </div>
+</div>
