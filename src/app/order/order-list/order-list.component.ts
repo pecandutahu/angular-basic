@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '@app/core/model/order';
 import { OrderService } from '@app/core/services/order.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-order-list',
@@ -36,6 +37,19 @@ export class OrderListComponent implements OnInit{
         console.log(error);
       });
     }
+  }
+
+  downloadReport() {
+    this.orderService.downloadReport().subscribe(output => {
+      const url = window.URL.createObjectURL(output);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = "summary-report.pdf";
+      a.click();
+      window.URL.revokeObjectURL(url);
+    }, error => {
+      console.log(error);
+    })
   }
 
   

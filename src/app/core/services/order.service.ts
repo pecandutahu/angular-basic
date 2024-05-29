@@ -4,6 +4,7 @@ import { Order } from '../model/order';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environtment/environment';
+import { response } from 'express';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +45,10 @@ export class OrderService {
 
   updateOrder(order: Order): Observable<Order> {
     return this.http.put<Order>(`${environment.apiUrl}/order/update/${order.orderId}`, order);
+  }
+
+  downloadReport(): Observable<Blob> {
+    const options = { responseType: 'blob' as 'json' };
+    return this.http.get<Blob>(`${environment.apiUrl}/order/downloadReport`, options);
   }
 }

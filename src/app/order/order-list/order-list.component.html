@@ -15,9 +15,13 @@
         </div>
     </div>
     <div class="row">
-        <div>
+
+        <div class="">
             <a routerLink="/order/create" class="btn btn-primary">Tambah Order</a>
+            <button mat-raised-button color="accent" class="mx-1" (click)="downloadReport()">Unduh Laporan PDF</button>
         </div>
+    </div>
+    <div class="row mt-2">
         <div class="lg-12">
             <div class="table-responsive">
                 <table class="table table-striped">
