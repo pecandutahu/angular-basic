@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="lg-12">
+            <h3 class="text-center">List Orders</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 ms-auto">
+            <div class="input-group">
+                <!-- <input [(ngModel)]="searchText" (input)="onSearch()" type="text" name="" id="" class="form-control" placeholder="Search name"> -->
+                <!-- <span class="input-group-btn">
+                    <a (click) = "onSearch()" class="btn btn-info">Search</a>
+                </span> -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <!-- <a routerLink="/order/create" class="btn btn-primary">Tambah Customer</a> -->
+        </div>
+        <div class="lg-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Order Code</th>
+                            <th>Total Price</th>
+                            <th>Customer Name</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of orders; let i = index;">
+                            <td> {{ i+1 }} </td>
+                            <td> {{ item.orderCode }} </td>
+                            <td> {{ item.totalPrice }} </td>
+                            <td> {{ item.customer?.customerName }} </td>
+                            <td> {{ item.orderDate? item.orderDate : 'No Date' }} </td>
+
+                            <td>
+                                <!-- <a class="btn btn-success" routerLink="/customer/{{item.customerId}}/edit">Edit</a> -->
+                                <a class="btn btn-danger" (click) = "deleteOrder(item.orderId)">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

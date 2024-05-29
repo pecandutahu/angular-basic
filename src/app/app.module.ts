@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +11,17 @@ import { CustomerEditComponent } from './customer/customer-edit/customer-edit.co
 import { ItemCreateComponent } from './item/item-create/item-create.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
+import { OrderFormComponent } from './order/order-form/order-form.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(LOCALE_ID, 'id');
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +30,21 @@ import { ItemEditComponent } from './item/item-edit/item-edit.component';
     CustomerEditComponent,
     ItemCreateComponent,
     ItemListComponent,
-    ItemEditComponent
+    ItemEditComponent,
+    OrderListComponent,
+    OrderFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [
     provideClientHydration()
