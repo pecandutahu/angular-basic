@@ -41,6 +41,7 @@ export class OrderFormComponent implements OnInit{
   ngOnInit(): void {
     this.itemService.getItems().subscribe(items => this.items = items);
     this.customerService.getCustomers().subscribe(output => this.customers = output);
+    this.addItem();
   }
 
   get itemsArray(): FormArray {
