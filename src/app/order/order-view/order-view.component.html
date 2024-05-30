@@ -42,7 +42,7 @@
                   <td> {{ i+1 }} </td>
                   <td> {{ item.item?.itemsName }} </td>
                   <td> {{ item.quantity }} </td>
-                  <td> {{ item.price | currency:'IDR'  }} </td>
+                  <td> {{ item.price | currency:'IDR' }} </td>
                   <td> {{ ((item.price || 0) * (item.quantity || 0) ) | currency:'IDR' }} </td>
                 </tr>
               </tbody>

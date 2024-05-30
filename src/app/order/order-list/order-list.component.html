@@ -39,7 +39,7 @@
                         <tr *ngFor="let item of orders; let i = index;">
                             <td> {{ i+1 }} </td>
                             <td> {{ item.orderCode }} </td>
-                            <td> {{ item.totalPrice }} </td>
+                            <td> {{ item.totalPrice | currency:'IDR' }} </td>
                             <td> {{ item.customer?.customerName }} </td>
                             <td> {{ item.orderDate? item.orderDate : 'No Date' }} </td>
 
