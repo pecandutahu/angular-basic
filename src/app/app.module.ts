@@ -20,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { registerLocaleData } from '@angular/common';
+import { OrderViewComponent } from './order/order-view/order-view.component';
 
 registerLocaleData(LOCALE_ID, 'id');
 @NgModule({
@@ -32,7 +33,8 @@ registerLocaleData(LOCALE_ID, 'id');
     ItemListComponent,
     ItemEditComponent,
     OrderListComponent,
-    OrderFormComponent
+    OrderFormComponent,
+    OrderViewComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { ItemListComponent } from './item/item-list/item-list.component';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { OrderFormComponent } from './order/order-form/order-form.component';
+import { OrderViewComponent } from './order/order-view/order-view.component';
 
 const routes: Routes = [
   {path : "customer", component:CustomerListsComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path : "item/:id/edit", component:ItemEditComponent},
   {path : "order", component:OrderListComponent},
   {path : "order/create", component:OrderFormComponent},
+  {path : "order/:id/view", component:OrderViewComponent},
 ];
 
 @NgModule({

@@ -36,7 +36,7 @@ export class OrderService {
   }
 
   getOrder(id: number): Observable<Order> {
-    return this.http.get<Order>(`${environment.apiUrl}/order/list/${id}`);
+    return this.http.get<Order>(`${environment.apiUrl}/order/lists/${id}`);
   }
 
   deleteOrder(id:number | undefined): Observable<any> {

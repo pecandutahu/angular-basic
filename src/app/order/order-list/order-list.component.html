@@ -44,7 +44,7 @@
                             <td> {{ item.orderDate? item.orderDate : 'No Date' }} </td>
 
                             <td>
-                                <!-- <a class="btn btn-success" routerLink="/customer/{{item.customerId}}/edit">Edit</a> -->
+                                <a class="btn btn-info" routerLink="/order/{{item.orderId}}/view">View</a>
                                 <a class="btn btn-danger" (click) = "deleteOrder(item.orderId)">Delete</a>
                             </td>
                         </tr>
